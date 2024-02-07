@@ -8,7 +8,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="Home Page" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Grid>
+    <StackPanel>
+        <StackPanel Margin="60,60" Orientation="Horizontal">
+            <Image
+            Source="Assets/logo.png"
+            Width="80"
+            Height="80"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            >
+            </Image>
+            <RichTextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="DetectFromContent">
+                <Paragraph TextAlignment="Start">
+                    <Bold FontSize="40">Rexwe Team</Bold>
+                    <LineBreak/>
+                    <Run Foreground="Gray">小天才好啊，小天才美，用小天才给我增智慧
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+        </StackPanel>
+
+        <Button Content="一键Root" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="40" FontSize="16"/>
+    </StackPanel>
 </Page>

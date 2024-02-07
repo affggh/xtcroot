@@ -11,6 +11,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="HomePage.xaml" />
+    <None Remove="ModulePage.xaml" />
+    <None Remove="RollBackPage.xaml" />
+    <None Remove="RootPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="RootPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RollBackPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModulePage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

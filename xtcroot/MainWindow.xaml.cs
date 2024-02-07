@@ -30,9 +30,18 @@ namespace xtcroot
             SystemBackdrop = new MicaBackdrop()
             { Kind = MicaKind.BaseAlt };
             ExtendsContentIntoTitleBar = true;
+
+            // Select default item of NavigationView
+            SelectedNavItem = navigationView.MenuItems[0];
         }
 
-        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+        private object selectedNavItem;
+        public object SelectedNavItem
+        {
+            get { return selectedNavItem; }
+            set { selectedNavItem = value; }
+        }
+        private void NavigationView_Loaded(object sender, RoutedEventArgs e) // Set default frame
         {
             contentFrame.Navigate(typeof(HomePage));
         }
@@ -44,11 +53,22 @@ namespace xtcroot
             {
                 switch (invokedItem.Tag.ToString())
                 {
-                    case "Home":
+                    case "HomePage":
                         contentFrame.Navigate(typeof(HomePage));
+                        break;
+                    case "ModulePage":
+                        contentFrame.Navigate(typeof(ModulePage));
+                        break;
+                    case "RollBackPage":
+                        contentFrame.Navigate(typeof(RollBackPage));
+                        break;
+                    case "RootPage":
+                        contentFrame.Navigate(typeof(RootPage));
                         break;
                 }
             }
         }
     }
 }
+
+

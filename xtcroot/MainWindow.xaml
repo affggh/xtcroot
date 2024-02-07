@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="xtcroot.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:xtcroot"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+
+    <NavigationView
+        IsSettingsVisible="False"
+        IsBackButtonVisible="Collapsed"
+        IsPaneOpen="False"
+        Margin="0,36,0,0"
+        Loaded="NavigationView_Loaded"
+        ItemInvoked="NavigationView_ItemInvoked"
+        PaneDisplayMode="Left">
+        <NavigationView.PaneHeader>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Image Source="Assets/logo.png" Width="64" Height="64" HorizontalAlignment="Left" Margin="12,36,0,0"/>
+                <TextBlock 
+                    Text="Rexwe Team"
+                    Margin="12,0,0,12" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Center" 
+                    FontStyle="Italic"
+                    FontSize="18"/>
+            </StackPanel>
+        </NavigationView.PaneHeader>
+
+        <NavigationView.Header>
+            <TextBlock Text="XTC Easy Root"/>
+        </NavigationView.Header>
+
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home" Icon="Home" Tag="HomePage"/>
+            <NavigationViewItem Content="Module" Icon="Shop" Tag="ModulePage"/>
+            <NavigationViewItem Content="Revert" Icon="Clock" Tag="RevertPage"/>
+            <NavigationViewItem Content="Root" Icon="Admin" Tag="RootPage"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="contentFrame"/>
+    </NavigationView>
+</Window>

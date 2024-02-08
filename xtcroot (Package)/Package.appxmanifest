@@ -10,7 +10,7 @@
   <Identity
     Name="157aa9b7-246e-49fa-82f7-04deaaa6f098"
     Publisher="CN=affggh"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="157aa9b7-246e-49fa-82f7-04deaaa6f098" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -41,6 +41,8 @@
         Square44x44Logo="Images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

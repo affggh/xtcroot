@@ -8,7 +8,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="降级功能暂未实现" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <Grid Margin="60">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Column="0" Grid.Row="0" Margin="5"/>
+        <Button Content="选择文件" Grid.Column="1" Grid.Row="0" Margin="5"/>
+        <Button Content="开始降级" Grid.Column="0" Grid.Row="1" Margin="10" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="16"/>
+        <HyperlinkButton Content="点击这里获取线刷包..." NavigateUri="https://www.baidu.com" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <ProgressBar Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
     </Grid>
+
 </Page>

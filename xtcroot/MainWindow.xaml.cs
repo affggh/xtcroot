@@ -65,6 +65,9 @@ namespace xtcroot
                     case "RootPage":
                         contentFrame.Navigate(typeof(RootPage));
                         break;
+                    case "AboutPage":
+                        contentFrame.Navigate(typeof(AboutPage));
+                        break;
                 }
             }
         }

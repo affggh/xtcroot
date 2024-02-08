@@ -8,7 +8,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock Text="Root页面暂未实现" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Grid>
+    <StackPanel Margin="60" Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="100" TextAlignment="Start">
+                设备信息:
+        </TextBlock>
+        <Button Content="刷新设备" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <Button Content="开始root" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <ProgressBar VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="5,60,5,5"/>
+    </StackPanel>
 </Page>

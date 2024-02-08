@@ -27,7 +27,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <Image Source="Assets/logo.png" Width="64" Height="64" HorizontalAlignment="Left" Margin="12,36,0,0"/>
                 <TextBlock 
-                    Text="Rexwe Team"
+                    Text="Rexwe iMoo Team"
                     Margin="12,0,0,12" 
                     VerticalAlignment="Bottom" 
                     HorizontalAlignment="Center" 
@@ -37,14 +37,15 @@
         </NavigationView.PaneHeader>
 
         <NavigationView.Header>
-            <TextBlock Text="XTC Easy Root"/>
+            <TextBlock x:Name="headerText" Text="XTC Easy Root"/>
         </NavigationView.Header>
 
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Home" Icon="Home" Tag="HomePage"/>
-            <NavigationViewItem Content="Module" Icon="Shop" Tag="ModulePage"/>
-            <NavigationViewItem Content="RollBack" Icon="Clock" Tag="RollBackPage"/>
+            <NavigationViewItem Content="主页" Icon="Home" Tag="HomePage"/>
+            <NavigationViewItem Content="模块" Icon="Shop" Tag="ModulePage"/>
+            <NavigationViewItem Content="回滚" Icon="Clock" Tag="RollBackPage"/>
             <NavigationViewItem Content="Root" Icon="Admin" Tag="RootPage"/>
+            <NavigationViewItem Content="关于" Icon="ContactInfo" Tag="AboutPage"/>
         </NavigationView.MenuItems>
         <Frame x:Name="contentFrame"/>
     </NavigationView>

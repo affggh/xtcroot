@@ -25,6 +25,8 @@ namespace xtcroot
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+
+        private bool isRootPageWarningShowed = false;
         public MainWindow()
         {
             this.InitializeComponent();
@@ -38,6 +40,10 @@ namespace xtcroot
 
         private async void OnNavigatingRootPage()
         {
+            if (isRootPageWarningShowed)
+            {
+                return;
+            }
             ContentDialog rootWarningDialog = new ContentDialog
             {
                 Title = "⚠警告",
@@ -56,6 +62,9 @@ namespace xtcroot
             {
                 contentFrame.Navigate(typeof(HomePage));
                 navigationView.SelectedItem = navigationView.MenuItems[0];
+            } else
+            {
+                isRootPageWarningShowed = true;
             }
 
         }

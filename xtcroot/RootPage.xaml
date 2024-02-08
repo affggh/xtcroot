@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Margin="60" Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+    <StackPanel x:Name="rootStack" Margin="60" Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
         <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="100" TextAlignment="Start">
                 设备信息:

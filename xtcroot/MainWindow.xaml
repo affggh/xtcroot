@@ -37,7 +37,7 @@
         </NavigationView.PaneHeader>
 
         <NavigationView.Header>
-            <TextBlock x:Name="headerText" Text="XTC Easy Root"/>
+            <TextBlock x:Name="headerText" Text="主页"/>
         </NavigationView.Header>
 
         <NavigationView.MenuItems>

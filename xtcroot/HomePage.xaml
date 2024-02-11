@@ -8,8 +8,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel>
-        <TextBlock FontSize="40" Text="设备未连接" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,60,0,0"/>
-        <Button Content="一键Root" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="40" FontSize="16"/>
+    <StackPanel >
+        <TextBlock x:Name="deviceStatusText" FontSize="40" Text="设备未连接" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,60,0,0"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="40,60,5,5" Content="adb驱动" FontSize="16"/>
+            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="5,60,40,5" Content="9008驱动" FontSize="16"/>
+            <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="40,5,5,0" Content="刷新设备" FontSize="16"/>
+            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Margin="5,5,40,0" Content="一键Root" FontSize="16" Click="RefreshButtonClick"/>
+            
+        </Grid>
     </StackPanel>
 </Page>

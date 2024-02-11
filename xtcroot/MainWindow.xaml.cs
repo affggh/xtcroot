@@ -12,6 +12,8 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -38,13 +40,37 @@ namespace xtcroot
             SelectedNavItem = navigationView.MenuItems[0];
         }
 
+        private DispatcherTimer timer;
+        private ContentDialog rootWarningDialog;
+        private const int defaultWarningDisabledSeconds = 10;
+        private int warningRemainingSeconds = defaultWarningDisabledSeconds;
+        private bool isWarningCancled = false;
+        //private Button warningPrimaryButton;
+        private void OnTimerTick(object sender, object e)
+        {
+            if (warningRemainingSeconds == 0)
+            {
+                rootWarningDialog.PrimaryButtonText = "我已知晓并继续";
+                rootWarningDialog.DefaultButton = ContentDialogButton.Primary;
+                timer.Stop();
+                rootWarningDialog.IsPrimaryButtonEnabled = true;
+            } else if (isWarningCancled)
+            {
+                timer.Stop();
+                isWarningCancled = false;
+            } else 
+            {
+                warningRemainingSeconds--;
+                rootWarningDialog.PrimaryButtonText = $"我已知晓并继续({warningRemainingSeconds}s)";
+            }
+        }
         private async void OnNavigatingRootPage()
         {
             if (isRootPageWarningShowed)
             {
                 return;
             }
-            ContentDialog rootWarningDialog = new ContentDialog
+            rootWarningDialog = new ContentDialog
             {
                 Title = "⚠警告",
                 Content = "ROOT可能会导致您的设备损坏,如果因为您的操作不当造成设备损坏,Rexwe iMoo无任何责任\n" +
@@ -55,19 +81,33 @@ namespace xtcroot
                 DefaultButton = ContentDialogButton.Primary,
             };
 
+            rootWarningDialog.IsPrimaryButtonEnabled = false;
             rootWarningDialog.XamlRoot = this.Content.XamlRoot;
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += OnTimerTick;
+            timer.Start();
             var result = await rootWarningDialog.ShowAsync();
 
             if (result != ContentDialogResult.Primary)
             {
                 contentFrame.Navigate(typeof(HomePage));
                 navigationView.SelectedItem = navigationView.MenuItems[0];
+                var selectedItem = navigationView.SelectedItem as NavigationViewItem;
+                if (selectedItem != null)
+                {
+                    headerText.Text = selectedItem.Content.ToString();
+                }
+                warningRemainingSeconds = defaultWarningDisabledSeconds; // reset this to 30 seconds
+                isWarningCancled = true;      // warning cancled
             } else
             {
                 isRootPageWarningShowed = true;
             }
 
         }
+
 
         private object selectedNavItem;
         public object SelectedNavItem

@@ -42,8 +42,8 @@
 
         <NavigationView.MenuItems>
             <NavigationViewItem Content="主页" Icon="Home" Tag="HomePage"/>
-            <NavigationViewItem Content="模块" Icon="Shop" Tag="ModulePage"/>
-            <NavigationViewItem Content="回滚" Icon="Clock" Tag="RollBackPage"/>
+            <NavigationViewItem Content="模块" Icon="Emoji" Tag="ModulePage"/>
+            <NavigationViewItem Content="回滚" Icon="Rotate" Tag="RollBackPage"/>
             <NavigationViewItem Content="Root" Icon="Admin" Tag="RootPage"/>
             <NavigationViewItem Content="关于" Icon="ContactInfo" Tag="AboutPage"/>
         </NavigationView.MenuItems>

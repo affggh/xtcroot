@@ -12,6 +12,10 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Windows.Devices.Enumeration;
+using Windows.Devices.Usb;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -23,9 +27,16 @@ namespace xtcroot
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        private DeviceWatcher deviceWatcher;
         public HomePage()
         {
             this.InitializeComponent();
         }
+
+        private void RefreshButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
 }
